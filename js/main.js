@@ -229,21 +229,36 @@ function initModal() {
   // All triggers
   const triggers = document.querySelectorAll('#openModal, .final-cta__b2b, [onclick*="openModal"]');
 
+  let previousFocus = null;
+
   function openModal() {
+    previousFocus = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
-    // Focus first input
     setTimeout(() => {
       const firstInput = modal.querySelector('.modal__input');
       if (firstInput) firstInput.focus();
     }, 100);
+    // Focus trap
+    modal.addEventListener('keydown', trapFocus);
   }
 
   function closeModal() {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    modal.removeEventListener('keydown', trapFocus);
+    if (previousFocus) previousFocus.focus();
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    const focusable = modal.querySelectorAll('input, textarea, button, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
   // Open triggers
@@ -259,9 +274,13 @@ function initModal() {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 
-  // Form submission (fake for now)
+  // Form validation + submission
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    const email = form.querySelector('input[name="email"]');
+    const name = form.querySelector('input[name="name"]');
+    if (!name.value.trim()) { name.focus(); return; }
+    if (!email.value.includes('@') || !email.value.includes('.')) { email.focus(); return; }
     form.hidden = true;
     success.hidden = false;
     // Reset after 3s
@@ -422,8 +441,12 @@ function initHeroVideoRotation() {
     });
   });
 
-  // Start first video
-  videos[0].play().catch(() => {});
+  // Start first video with fallback
+  videos[0].play().catch(() => {
+    // Autoplay blocked — show overlay darker as fallback
+    const overlay = document.querySelector('.hero__overlay');
+    if (overlay) overlay.style.background = 'rgba(9,12,15,0.9)';
+  });
 }
 
 /* --- Glow Cards: radial gradient follows cursor --- */
