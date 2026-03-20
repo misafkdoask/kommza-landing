@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kommza — Видеовстречи быстро, просто, надежно</title>
+  <meta name="description" content="Коммза — сервис видеоконференцсвязи. Мгновенные созвоны без VPN, без установки, без регистрации. Вебинары, стримы, AI-ассистент.">
+  <meta property="og:title" content="Kommza — Видеовстречи быстро, просто, надежно">
+  <meta property="og:description" content="Мгновенные созвоны без VPN, без установки, без регистрации.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kommza.io">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <header class="header" id="header">
+    <a href="/" class="header__logo" aria-label="Kommza — на главную">
+      <img src="assets/logo-white.svg" alt="Kommza" width="140" height="22">
+    </a>
+    <div class="header__right">
+      <a href="https://hub.kommza.io" class="header__login" data-i18n="nav.login">ВОЙТИ</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="2"/>
+          <path class="header__menu-chevron" d="M11 10L15 14L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MENU OVERLAY ===== -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-overlay__inner">
+      <nav class="menu-overlay__nav">
+        <a href="#features" class="menu-overlay__link" data-i18n="nav.features">Продукт</a>
+        <a href="#use-cases" class="menu-overlay__link" data-i18n="nav.usecases">Сценарии</a>
+        <a href="#ai" class="menu-overlay__link" data-i18n="nav.ai">AI-ассистент</a>
+        <a href="#pricing" class="menu-overlay__link" data-i18n="nav.pricing">Тарифы</a>
+        <a href="#faq" class="menu-overlay__link" data-i18n="nav.faq">Вопросы</a>
+      </nav>
+      <div class="menu-overlay__actions">
+        <a href="https://hub.kommza.io" class="menu-overlay__action-link" data-i18n="nav.login">Войти</a>
+        <div class="menu-overlay__lang">
+          <button class="lang-btn lang-btn--active" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <div class="menu-overlay__social">
+          <a href="https://t.me/kommza" aria-label="Telegram" class="social-icon">TG</a>
+          <a href="https://vk.com/kommza" aria-label="VK" class="social-icon">VK</a>
+          <a href="https://linkedin.com/company/kommza" aria-label="LinkedIn" class="social-icon">IN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="section section--hero" id="hero">
+      <div class="hero__videos">
+        <video class="hero__video hero__video--active" autoplay muted playsinline>
+          <source src="assets/hero-bg.mp4" type="video/mp4">
+        </video>
+        <video class="hero__video" muted playsinline>
+          <source src="assets/hero-bg-2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title" data-reveal="fade-up">
+          <span data-i18n="hero.title1">видеовстречи —</span><br>
+          <span class="text-yellow" data-i18n="hero.title2">быстро.</span><br>
+          <span data-i18n="hero.title3">просто.</span><br>
+          <span data-i18n="hero.title4">надежно.</span>
+        </h1>
+        <p class="hero__subtitle" data-reveal="fade-up" data-reveal-delay="100" data-i18n="hero.subtitle">
+          МИНИМУМ ШАГОВ. МАКСИМУМ РЕЗУЛЬТАТА.
+        </p>
+        <div class="hero__cta" data-reveal="fade-up" data-reveal-delay="200">
+          <a href="https://meeting.kommza.io/unregistered-meeting" class="btn btn--white" data-i18n="hero.cta">НАЧАТЬ ВСТРЕЧУ</a>
+          <button class="hero__b2b-link" id="openModal" data-i18n="hero.b2b">Запросить условия для бизнеса →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. PROMISE ===== -->
+    <section class="section section--promise" id="promise">
+      <div class="container">
+        <div class="promise__layout">
+          <div class="promise__text-col">
+            <h2 class="promise__title" data-reveal="fade-up" data-i18n="promise.title">созвоны<br>без лишнего</h2>
+            <p class="promise__text" data-reveal="fade-up" data-reveal-delay="100" data-i18n="promise.text">
+              Коммза устроена так, чтобы встреча начиналась сразу — без объяснений участникам и лишних шагов.
+              Без инструкций и лишних шагов. Ссылка — и вы на встрече.
+            </p>
+          </div>
+          <div class="promise__mockup" data-reveal="slide-right" data-reveal-delay="200">
+            <img src="assets/screen-desktop.png" alt="Интерфейс Kommza" class="promise__screenshot" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3-4. HORIZONTAL SCROLL SECTION (Features + Use Cases + Steps) ===== -->
+    <div class="hpanel-wrap" id="hpanelWrap">
+      <div class="hpanel-sticky" id="features">
+        <div class="hpanel-track" id="hpanelTrack">
+
+          <!-- PANEL 1: Features -->
+          <div class="hpanel" style="background: var(--c-bg);">
+            <div class="hpanel__inner">
+              <h2 class="section__title" data-i18n="features.title">когда удобство<br>работает на результат</h2>
+              <p class="section__subtitle" data-i18n="features.subtitle">ВСЁ ЛИШНЕЕ УБРАНО. ОСТАЛИСЬ РАЗГОВОР И РЕШЕНИЯ.</p>
+              <div class="features__grid">
+                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="0">
+                  <div class="feature-card__icon">
+                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm-30.46,69.75-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L115.72,148.6l50.34-50.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                  </div>
+                  <h3 class="feature-card__title">Без VPN</h3>
+                  <p class="feature-card__text">Работает из России без ограничений.</p>
+                </div>
+                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="200">
+                  <div class="feature-card__icon">
+                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V96H40V56ZM40,200V112H216v88Z"/></svg>
+                  </div>
+                  <h3 class="feature-card__title">Без установки</h3>
+                  <p class="feature-card__text">Прямо в браузере — по ссылке.</p>
+                </div>
+                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="400">
+                  <div class="feature-card__icon">
+                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg>
+                  </div>
+                  <h3 class="feature-card__title">Без регистрации</h3>
+                  <p class="feature-card__text">Гостям не нужна регистрация.</p>
+                </div>
+                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="600">
+                  <div class="feature-card__icon">
+                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L115.72,164.4l42.34-42.06A8,8,0,0,1,169.66,122.34Z"/></svg>
+                  </div>
+                  <h3 class="feature-card__title">Без лишних календарей</h3>
+                  <p class="feature-card__text">Интеграции с Яндекс и Google.</p>
+                </div>
+                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="800">
+                  <div class="feature-card__icon">
+                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M149.66,138.34a8,8,0,0,1,0,11.32L120,179.31l13.66,13.66a8,8,0,0,1-11.32,11.31L108.69,190.6,95.31,204a8,8,0,0,1-11.31-11.31l13.38-13.38L83.72,165.66a8,8,0,0,1,11.31-11.32L108.69,168l29.66-29.66A8,8,0,0,1,149.66,138.34Zm-32-20.68L131.31,104l13.38,13.38A8,8,0,0,0,156,106.06L142.63,92.69,156.28,79a8,8,0,0,0-11.31-11.31L131.31,81.38,117.66,67.72a8,8,0,0,0-11.32,11.31L120,92.69l-13.66,13.66a8,8,0,1,0,11.32,11.31ZM208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208Z"/></svg>
+                  </div>
+                  <h3 class="feature-card__title">Без лишних связок</h3>
+                  <p class="feature-card__text">Нет привязки к соцсетям.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 2: 3-Step Flow -->
+          <div class="hpanel" style="background: linear-gradient(135deg, #FFFC1F 0%, #ffe14d 100%);">
+            <div class="hpanel__inner hpanel__inner--center">
+              <h2 class="section__title section__title--dark" data-i18n="features.flow">связь — всегда<br>и везде. бесшовно.</h2>
+              <div class="steps steps--horizontal">
+                <div class="steps__item steps__item--dark">
+                  <div class="steps__circle steps__circle--dark">1</div>
+                  <span class="steps__label steps__label--dark" data-i18n="features.step1">Создать встречу</span>
+                </div>
+                <div class="steps__line steps__line--dark"></div>
+                <div class="steps__item steps__item--dark">
+                  <div class="steps__circle steps__circle--dark">2</div>
+                  <span class="steps__label steps__label--dark" data-i18n="features.step2">Отправить ссылку</span>
+                </div>
+                <div class="steps__line steps__line--dark"></div>
+                <div class="steps__item steps__item--dark">
+                  <div class="steps__circle steps__circle--dark">3</div>
+                  <span class="steps__label steps__label--dark" data-i18n="features.step3">Начать общаться</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 3: Use Cases -->
+          <div class="hpanel" style="background: linear-gradient(180deg, #E8EAED 0%, #D0D4D8 100%);">
+            <div class="hpanel__inner">
+              <h2 class="section__title section__title--dark" data-i18n="usecases.title">для работы<br>в реальном темпе</h2>
+              <p class="section__subtitle section__subtitle--dark" data-i18n="usecases.subtitle">КОГДА ВАЖНЫ СКОРОСТЬ, ФОКУС И ПРОФЕССИОНАЛЬНЫЙ ФОРМАТ</p>
+              <div class="uc-grid">
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M12 18h8M12 22h12M12 26h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3 class="uc-card__title">Команды и IT</h3><p class="uc-card__text">Быстрые синхронизации без лишнего контекста</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="12" width="24" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M14 12V8h12v4" stroke="currentColor" stroke-width="2"/><path d="M20 20v8M16 24h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3 class="uc-card__title">Корпоративные встречи</h3><p class="uc-card__text">Рабочий формат без экосистемных ограничений</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="16" cy="14" r="5" stroke="currentColor" stroke-width="2"/><circle cx="28" cy="14" r="4" stroke="currentColor" stroke-width="2"/><path d="M6 32c0-5.523 4.477-10 10-10s10 4.523 10 10" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><h3 class="uc-card__title">HR и рекрутинг</h3><p class="uc-card__text">Интервью, которые начинаются вовремя</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="28" cy="18" r="6" stroke="currentColor" stroke-width="2"/><path d="M28 15v3l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 28V12a6 6 0 016-6h0a6 6 0 016 6v4" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><h3 class="uc-card__title">Консультации</h3><p class="uc-card__text">Юристы, коучи, телемедицина — фокус на задаче</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 22l9-6 5 3 6-4 8 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></svg></div><h3 class="uc-card__title">Продажи и демо</h3><p class="uc-card__text">Показ экрана, запись встречи</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 8h24v24H8z" stroke="currentColor" stroke-width="2" fill="none" rx="3"/><path d="M14 16h12M14 20h8M14 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3 class="uc-card__title">Обучение</h3><p class="uc-card__text">Вебинары, семинары и стримы</p></article>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Progress dots -->
+        <div class="hpanel-dots" id="hpanelDots">
+          <span class="hpanel-dot hpanel-dot--active"></span>
+          <span class="hpanel-dot"></span>
+          <span class="hpanel-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MULTI-PLATFORM ===== -->
+    <section class="section section--platform" id="platform">
+      <div class="container">
+        <h2 class="section__title" data-reveal="fade-up" data-i18n="platform.title">везде.<br>на любом устройстве.</h2>
+        <p class="section__subtitle" data-reveal="fade-up" data-reveal-delay="100" data-i18n="platform.subtitle">БРАУЗЕР, ДЕСКТОП, МОБИЛЬНОЕ ПРИЛОЖЕНИЕ</p>
+        <div class="platform__devices" data-reveal="fade-up" data-reveal-delay="200">
+          <div class="device-laptop device-laptop--platform tilt-card">
+            <div class="device-laptop__screen">
+              <img src="assets/screen-desktop.png" alt="Kommza Desktop" class="device-screenshot" loading="lazy">
+            </div>
+          </div>
+          <div class="platform__phone-col">
+            <div class="device-phone device-phone--large tilt-card">
+              <div class="device-phone__notch"></div>
+              <div class="device-phone__screen">
+                <img src="assets/screen-mobile-1.png" alt="Kommza Mobile" class="device-screenshot" loading="lazy">
+              </div>
+            </div>
+            <div class="platform__badges">
+              <span class="platform__badge">iOS</span>
+              <span class="platform__badge">Android</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. AI ASSISTANT ===== -->
+    <section class="section section--ai" id="ai">
+      <div class="container">
+        <h2 class="section__title" data-reveal="fade-up" data-i18n="ai.title">результат встречи —<br>не теряется</h2>
+        <p class="section__subtitle" data-reveal="fade-up" data-reveal-delay="100" data-i18n="ai.subtitle">ИИ-АССИСТЕНТ ПОМОГАЕТ ДО ВСТРЕЧИ, ВО ВРЕМЯ И ПОСЛЕ</p>
+
+        <div class="ai__layout" data-reveal="fade-up" data-reveal-delay="200">
+          <div class="ai__chat-window">
+            <div class="chat-window__header">
+              <div class="chat-window__dot chat-window__dot--yellow"></div>
+              <span class="chat-window__title">AI-ассистент Kommza</span>
+              <div class="ai__badge" data-i18n="ai.badge">СКОРО</div>
+            </div>
+            <div class="chat-window__body">
+              <div class="chat-bubble chat-bubble--user">
+                <div class="chat-bubble__avatar">Вы</div>
+                <p>Поставь мне встречу с Машей Ивановой и Владом Соловьевым CTO</p>
+              </div>
+              <div class="chat-bubble chat-bubble--ai">
+                <div class="chat-bubble__avatar chat-bubble__avatar--ai">AI</div>
+                <p>Проверила календари. У всех троих свободно завтра в 15:30. Создать встречу и отправить приглашения?</p>
+              </div>
+              <div class="chat-bubble chat-bubble--user">
+                <div class="chat-bubble__avatar">Вы</div>
+                <p>Да, создай</p>
+              </div>
+              <div class="chat-bubble chat-bubble--ai">
+                <div class="chat-bubble__avatar chat-bubble__avatar--ai">AI</div>
+                <p>Готово! Встреча создана на завтра, 15:30. Ссылка отправлена Маше и Владу. ✓</p>
+              </div>
+              <div class="chat-bubble chat-bubble--ai">
+                <div class="chat-bubble__avatar chat-bubble__avatar--ai">AI</div>
+                <p>Напомню всем участникам за 15 минут до начала и пришлю ссылку на встречу.</p>
+              </div>
+              <div class="chat-bubble__divider"></div>
+              <div class="chat-bubble chat-bubble--ai">
+                <div class="chat-bubble__avatar chat-bubble__avatar--ai">AI</div>
+                <p>Резюме встречи готово. 3 ключевых решения зафиксированы. Отправить участникам?</p>
+              </div>
+            </div>
+            <div class="chat-input">
+              <input type="text" placeholder="Напишите AI-ассистенту..." disabled>
+              <button class="chat-input__send" disabled aria-label="Отправить">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10l7-7 7 7M10 3v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-90,10,10)"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="ai__features">
+            <ul class="ai__list">
+              <li data-i18n="ai.f1">Назначает встречи и сверяет календари</li>
+              <li data-i18n="ai.f2">Помогает во время встречи</li>
+              <li data-i18n="ai.f3">Готовит резюме и протоколы</li>
+              <li data-i18n="ai.f4">Напоминает о договоренностях</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. PRICING ===== -->
+    <section class="section section--pricing" id="pricing">
+      <div class="container">
+        <h2 class="section__title" data-reveal="fade-up" data-i18n="pricing.title">выберите<br>формат работы</h2>
+        <p class="section__subtitle" data-reveal="fade-up" data-reveal-delay="100" data-i18n="pricing.subtitle">НАЧНИТЕ БЕСПЛАТНО. МАСШТАБИРУЙТЕСЬ ПО МЕРЕ РОСТА.</p>
+
+        <div class="pricing__grid">
+          <!-- Promo -->
+          <article class="price-card glow-card" data-reveal="scale-in" data-reveal-delay="0">
+            <div class="price-card__header">
+              <h3 class="price-card__name" data-i18n="pricing.promo.name">Промо</h3>
+              <div class="price-card__price"><span class="price-card__amount">0 ₽</span></div>
+            </div>
+            <ul class="price-card__features">
+              <li>До 10 участников</li>
+              <li>Встречи до 1 часа</li>
+              <li>Размытие фона</li>
+              <li>1 пробный вебинар</li>
+            </ul>
+            <a href="https://hub.kommza.io/register" class="btn btn--outline" data-i18n="pricing.promo.cta">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+          </article>
+          <!-- Pro (recommended) -->
+          <article class="price-card price-card--recommended glow-card" data-reveal="scale-in" data-reveal-delay="100">
+            <div class="price-card__badge" data-i18n="pricing.badge">РЕКОМЕНДУЕМ</div>
+            <div class="price-card__header">
+              <h3 class="price-card__name" data-i18n="pricing.pro.name">Pro</h3>
+              <div class="price-card__price">
+                <span class="price-card__amount">450 ₽</span>
+                <span class="price-card__period" data-i18n="pricing.perMonth">/ мес</span>
+              </div>
+            </div>
+            <ul class="price-card__features">
+              <li>До 20 участников</li>
+              <li>Встречи до 2 часов</li>
+              <li>10 записей встреч</li>
+              <li>1 вебинар в месяц</li>
+              <li>Фоны + размытие</li>
+            </ul>
+            <a href="https://hub.kommza.io/register?plan=pro" class="btn btn--white" data-i18n="pricing.pro.cta">ВЫБРАТЬ PRO</a>
+          </article>
+          <!-- Team -->
+          <article class="price-card glow-card" data-reveal="scale-in" data-reveal-delay="200">
+            <div class="price-card__header">
+              <h3 class="price-card__name" data-i18n="pricing.team.name">Team</h3>
+              <div class="price-card__price">
+                <span class="price-card__amount">850 ₽</span>
+                <span class="price-card__period" data-i18n="pricing.perUser">/ чел / мес</span>
+              </div>
+            </div>
+            <ul class="price-card__features">
+              <li>До 15 пользователей</li>
+              <li>До 100 участников</li>
+              <li>30 записей встреч</li>
+              <li>Вебинары без лимита</li>
+              <li>AI-ассистент</li>
+            </ul>
+            <a href="https://hub.kommza.io/register?plan=team" class="btn btn--outline" data-i18n="pricing.team.cta">ВЫБРАТЬ TEAM</a>
+          </article>
+          <!-- Business -->
+          <article class="price-card glow-card" data-reveal="scale-in" data-reveal-delay="300">
+            <div class="price-card__header">
+              <h3 class="price-card__name" data-i18n="pricing.biz.name">Business</h3>
+              <div class="price-card__price">
+                <span class="price-card__amount">9 600 ₽</span>
+                <span class="price-card__period" data-i18n="pricing.perMonthBase">/ мес за 8 чел</span>
+              </div>
+            </div>
+            <ul class="price-card__features">
+              <li>От 8 пользователей</li>
+              <li>До 200 участников</li>
+              <li>100 записей встреч</li>
+              <li>Все функции</li>
+              <li>Приоритетная поддержка</li>
+            </ul>
+            <button class="btn btn--outline" onclick="document.getElementById('openModal').click()" data-i18n="pricing.biz.cta">ЗАПРОСИТЬ УСЛОВИЯ</button>
+          </article>
+        </div>
+
+        <p class="pricing__footnote" data-reveal="fade-up" data-i18n="pricing.footnote">
+          Оплата помесячно или со скидкой за период. Растите — подключайте людей по мере необходимости.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 7. FAQ ===== -->
+    <section class="section section--faq" id="faq">
+      <div class="container container--narrow">
+        <h2 class="section__title" data-reveal="fade-up" data-i18n="faq.title">частые<br>вопросы</h2>
+
+        <div class="faq" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" data-i18n="faq.q1">
+              Нужно ли устанавливать приложение?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p data-i18n="faq.a1">Не обязательно. Коммза работает прямо в браузере — на компьютере, планшете и телефоне. Мобильное приложение доступно для удобства, но для участия во встрече установка не требуется.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" data-i18n="faq.q2">
+              Нужна ли регистрация?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p data-i18n="faq.a2">Нет. Регистрация нужна только если важны расширенные функции, закрытые встречи, вебинары или стримы. Гости просто переходят по ссылке и подключаются.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" data-i18n="faq.q3">
+              Подходит ли Коммза для работы?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p data-i18n="faq.a3">Да. Коммза создана для рабочих форматов: командных синхронизаций, интервью, консультаций и встреч с клиентами.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" data-i18n="faq.q4">
+              Насколько Коммза безопасна?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p data-i18n="faq.a4">Коммза использует серверы на территории Российской Федерации и соблюдает требования по защите данных. Сервис не привязан к социальным сетям и личным экосистемам.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" data-i18n="faq.q5">
+              Что с AI-ассистентом — он уже доступен?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p data-i18n="faq.a5">AI-функции запускаются поэтапно. Ассистент будет помогать фиксировать итоги встреч и избавлять от ручной рутины.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" data-i18n="faq.q6">
+              Можно ли пользоваться бесплатно?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p data-i18n="faq.a6">Да. Пользуйтесь бесплатно для повседневных задач и переходите на платный тариф, когда потребуется больше.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8. FINAL CTA ===== -->
+    <section class="section section--final-cta" id="final-cta">
+      <div class="container">
+        <h2 class="final-cta__title" data-reveal="fade-up" data-i18n="cta.title">начните встречу<br>с результатом</h2>
+        <p class="final-cta__subtitle" data-reveal="fade-up" data-reveal-delay="100" data-i18n="cta.subtitle">МИНИМУМ ДЕЙСТВИЙ. МАКСИМУМ ПОЛЬЗЫ.</p>
+        <div class="final-cta__actions" data-reveal="fade-up" data-reveal-delay="200">
+          <a href="https://meeting.kommza.io/unregistered-meeting" class="btn btn--dark" data-i18n="cta.start">НАЧАТЬ ВСТРЕЧУ</a>
+          <button class="final-cta__b2b" onclick="document.getElementById('openModal').click()" data-i18n="cta.b2b">Запросить условия для бизнеса →</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="/" class="footer__logo" aria-label="Kommza">
+          <img src="assets/logo-white.svg" alt="Kommza" width="120" height="18">
+        </a>
+        <div class="footer__links">
+          <a href="/terms" class="footer__link" data-i18n="footer.terms">Пользовательское соглашение</a>
+          <a href="/privacy" class="footer__link" data-i18n="footer.privacy">Политика конфиденциальности</a>
+          <a href="/cookies" class="footer__link" data-i18n="footer.cookies">Куки</a>
+        </div>
+        <div class="footer__bottom">
+          <span class="footer__copy" data-i18n="footer.copy">© 2025 ООО ЛЕТС</span>
+          <div class="footer__social">
+            <a href="https://t.me/kommza" aria-label="Telegram" class="social-icon">TG</a>
+            <a href="https://vk.com/kommza" aria-label="VK" class="social-icon">VK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY CTA ===== -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <a href="https://meeting.kommza.io/unregistered-meeting" class="sticky-cta__btn" data-i18n="sticky.start">НАЧАТЬ ВСТРЕЧУ</a>
+    <div class="sticky-cta__divider"></div>
+    <a href="https://hub.kommza.io" class="sticky-cta__btn" data-i18n="sticky.login">ВОЙТИ</a>
+  </div>
+
+  <!-- ===== B2B MODAL ===== -->
+  <div class="modal" id="b2bModal" aria-hidden="true" role="dialog" aria-label="Запросить условия для бизнеса">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h3 class="modal__title" data-i18n="modal.title">Запросить условия для бизнеса</h3>
+      <p class="modal__text" data-i18n="modal.text">Расскажите о вашей компании — мы подберём оптимальные условия.</p>
+      <form class="modal__form" id="b2bForm">
+        <input type="text" name="name" class="modal__input" placeholder="Имя" required data-i18n-placeholder="modal.name">
+        <input type="email" name="email" class="modal__input" placeholder="Email" required data-i18n-placeholder="modal.email">
+        <input type="text" name="company" class="modal__input" placeholder="Компания" data-i18n-placeholder="modal.company">
+        <textarea name="message" class="modal__input modal__textarea" placeholder="Сообщение" rows="3" data-i18n-placeholder="modal.message"></textarea>
+        <button type="submit" class="btn btn--white modal__submit" data-i18n="modal.submit">ОТПРАВИТЬ</button>
+      </form>
+      <div class="modal__success" id="modalSuccess" hidden>
+        <p data-i18n="modal.success">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
