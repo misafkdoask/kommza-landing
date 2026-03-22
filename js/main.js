@@ -250,6 +250,11 @@ function initModal() {
     document.body.classList.remove('modal-open');
     modal.removeEventListener('keydown', trapFocus);
     if (previousFocus) previousFocus.focus();
+    // Reset form state after close animation
+    setTimeout(() => {
+      if (form) { form.hidden = false; form.reset(); }
+      if (success) success.hidden = true;
+    }, 300);
   }
 
   function trapFocus(e) {
@@ -275,23 +280,65 @@ function initModal() {
   });
 
   // Form validation + submission
+  const errorName = document.getElementById('errorName');
+  const errorEmail = document.getElementById('errorEmail');
+
+  function clearErrors() {
+    [errorName, errorEmail].forEach(el => el?.classList.remove('is-visible'));
+    form?.querySelectorAll('.modal__input').forEach(el => el.classList.remove('is-invalid'));
+  }
+
+  // Clear errors on input
+  form?.querySelectorAll('.modal__input').forEach(input => {
+    input.addEventListener('input', () => {
+      input.classList.remove('is-invalid');
+      const errorEl = input.nextElementSibling;
+      if (errorEl?.classList.contains('modal__error')) errorEl.classList.remove('is-visible');
+    });
+  });
+
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    clearErrors();
     const email = form.querySelector('input[name="email"]');
     const name = form.querySelector('input[name="name"]');
-    if (!name.value.trim()) { name.focus(); return; }
-    if (!email.value.includes('@') || !email.value.includes('.')) { email.focus(); return; }
-    form.hidden = true;
-    success.hidden = false;
-    // Reset after 3s
-    setTimeout(() => {
-      closeModal();
-      setTimeout(() => {
-        form.hidden = false;
-        form.reset();
-        success.hidden = true;
-      }, 500);
-    }, 3000);
+    let valid = true;
+
+    if (!name.value.trim()) {
+      name.classList.add('is-invalid');
+      errorName?.classList.add('is-visible');
+      name.focus();
+      valid = false;
+    }
+    if (!email.value.includes('@') || !email.value.includes('.')) {
+      email.classList.add('is-invalid');
+      errorEmail?.classList.add('is-visible');
+      if (valid) email.focus();
+      valid = false;
+    }
+    if (!valid) return;
+
+    // Disable submit button while sending
+    const submitBtn = form.querySelector('.modal__submit');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'ОТПРАВКА...'; }
+
+    // Send to Google Sheets
+    fetch('https://script.google.com/macros/s/AKfycbzNsN8jqqTiCX7Ghn8MAQUsNQTKmqO83Uxn6JXh62N-SvcrISrR8KVo0QrqjsZTRv4q0Q/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        name: name.value.trim(),
+        email: email.value.trim(),
+        company: form.querySelector('input[name="company"]')?.value.trim() || '',
+        message: form.querySelector('textarea[name="message"]')?.value.trim() || ''
+      })
+    })
+    .finally(() => {
+      form.hidden = true;
+      success.hidden = false;
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'ОТПРАВИТЬ'; }
+    });
   });
 }
 

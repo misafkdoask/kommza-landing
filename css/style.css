@@ -787,8 +787,35 @@ ul { list-style: none; }
   box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 .feature-card__icon {
-  color: var(--c-yellow);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+}
+/* Feature illustrations — larger, rectangular */
+.illust-box {
+  width: 100%;
+  aspect-ratio: 3/2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.illust-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Use case icons — square, increased size for sharpness */
+.icon-box {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.icon-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  image-rendering: -webkit-optimize-contrast;
 }
 .feature-card__title {
   font-size: 18px;
@@ -865,7 +892,6 @@ ul { list-style: none; }
   box-shadow: 0 16px 48px rgba(0,0,0,0.4);
 }
 .uc-card__icon {
-  color: var(--c-yellow);
   margin-bottom: 20px;
 }
 .uc-card__title {
@@ -1241,6 +1267,12 @@ ul { list-style: none; }
   gap: 32px;
 }
 .footer__logo img { height: 18px; width: auto; }
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 16px;
+}
 .footer__links {
   display: flex;
   flex-wrap: wrap;
@@ -1377,6 +1409,15 @@ ul { list-style: none; }
 .modal__input:focus { border-color: var(--c-yellow); }
 .modal__textarea { resize: vertical; min-height: 80px; }
 .modal__submit { margin-top: 8px; }
+.modal__error {
+  display: none;
+  font-size: 13px;
+  color: var(--c-red);
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+.modal__error.is-visible { display: block; }
+.modal__input.is-invalid { border-color: var(--c-red); }
 .modal__success {
   text-align: center;
   padding: 32px 0;

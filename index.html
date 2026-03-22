@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <noscript><style>[data-reveal]{opacity:1;transform:none;filter:none;}</style></noscript>
 </head>
 <body>
 
@@ -118,43 +119,38 @@
               <h2 class="section__title" data-i18n="features.title">когда удобство<br>работает на результат</h2>
               <p class="section__subtitle" data-i18n="features.subtitle">УБРАЛИ ЛИШНЕЕ. ОСТАВИЛИ ГЛАВНОЕ.</p>
               <div class="features__grid">
-                <!-- Без VPN: глобус с галочкой — доступ без ограничений -->
                 <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="0">
-                  <div class="feature-card__icon">
-                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.62,87.62,0,0,1-6.4,32.94l-44.7-27.49a15.92,15.92,0,0,0-6.24-2.23l-22.82-3.08a16.11,16.11,0,0,0-16,7.86h-8.72l-3.8-7.86a15.91,15.91,0,0,0-11-8.67l-8-1.73L96.14,104h16.71a16.06,16.06,0,0,0,7.73-2l12.25-6.76a16.62,16.62,0,0,0,3-2.14l26.91-24.34A15.93,15.93,0,0,0,168,57.63V40.56A88.11,88.11,0,0,1,216,128ZM40,128a87.53,87.53,0,0,1,8.54-37.8l11.34,30.27a16,16,0,0,0,11.62,10l21.43,4.61L96.74,144a16.09,16.09,0,0,0,14.4,9h1.48l-7.23,38.61A16,16,0,0,0,109.52,208l1.59,2.16A88.11,88.11,0,0,1,40,128Z"/></svg>
-                  </div>
+                  <div class="feature-card__icon"><div class="illust-box">
+                    <img src="assets/feat-vpn.png" alt="Без VPN — работает в России" loading="lazy">
+                  </div></div>
                   <h3 class="feature-card__title">Без VPN</h3>
                   <p class="feature-card__text">Никаких VPN. Работает везде в России.</p>
                 </div>
-                <!-- Без установки: курсор-клик — один клик в браузере -->
                 <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="200">
-                  <div class="feature-card__icon">
-                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,48,88H208a8,8,0,0,1,5.66,13.66Z" opacity="0.5"/><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V96H40V56ZM40,200V112H216v88Z"/><circle cx="80" cy="76" r="8"/><circle cx="104" cy="76" r="8"/><circle cx="56" cy="76" r="8"/></svg>
-                  </div>
+                  <div class="feature-card__icon"><div class="illust-box">
+                    <img src="assets/feat-browser.png" alt="Работает прямо в браузере" loading="lazy">
+                  </div></div>
                   <h3 class="feature-card__title">Без установки</h3>
                   <p class="feature-card__text">Один клик — и вы на встрече. Никаких установок.</p>
                 </div>
-                <!-- Без регистрации: дверь открытая — свободный вход -->
                 <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="400">
-                  <div class="feature-card__icon">
-                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h48A8,8,0,0,1,224,128Zm-8,56H168a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm0-112H168a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16ZM112,56H48A16,16,0,0,0,32,72V184a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16V72A16,16,0,0,0,112,56Zm0,128H48V72h64Zm-24-72a12,12,0,1,1-12-12A12,12,0,0,1,88,112Z"/></svg>
-                  </div>
+                  <div class="feature-card__icon"><div class="illust-box">
+                    <img src="assets/feat-noreg.png" alt="Без регистрации для гостей" loading="lazy">
+                  </div></div>
                   <h3 class="feature-card__title">Без регистрации</h3>
                   <p class="feature-card__text">Приглашённые подключаются сразу, без аккаунта.</p>
                 </div>
-                <!-- Без лишних календарей: календарь со стрелками sync -->
                 <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="600">
-                  <div class="feature-card__icon">
-                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208Z"/><path d="M152,136H128a8,8,0,0,0,0,16h8v24a8,8,0,0,0,16,0V144A8,8,0,0,0,152,136Z" opacity="0.7"/><path d="M104,136a8,8,0,0,0-8,8v32a8,8,0,0,0,16,0V144A8,8,0,0,0,104,136Z" opacity="0.7"/></svg>
-                  </div>
+                  <div class="feature-card__icon"><div class="illust-box">
+                    <img src="assets/feat-calendar.png" alt="Синхронизация с календарями" loading="lazy">
+                  </div></div>
                   <h3 class="feature-card__title">Без лишних календарей</h3>
                   <p class="feature-card__text">Синхронизация с Яндекс и Google Календарём.</p>
                 </div>
-                <!-- Без лишних связок: разорванная цепь — нет привязки -->
                 <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="800">
-                  <div class="feature-card__icon">
-                    <svg width="52" height="52" viewBox="0 0 256 256" fill="currentColor"><path d="M232,80a55.67,55.67,0,0,1-16.4,39.6l-30.07,30.06a8,8,0,0,1-11.31-11.32l30.07-30.06a40,40,0,0,0-56.57-56.56L117.66,81.77a8,8,0,0,1-11.32-11.32L136.4,40.4A56,56,0,0,1,232,80ZM119.6,215.6l-30.07,30.06a40,40,0,0,1-56.56-56.57l30.06-30.06a8,8,0,0,0-11.32-11.32L21.66,177.77a56,56,0,0,0,79.2,79.2L130.92,227a8,8,0,0,0-11.32-11.31ZM216,152H184a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16ZM40,104H72a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm112,72a8,8,0,0,0-8,8v32a8,8,0,0,0,16,0V184A8,8,0,0,0,152,176ZM104,80a8,8,0,0,0,8-8V40a8,8,0,0,0-16,0V72A8,8,0,0,0,104,80Z"/></svg>
-                  </div>
+                  <div class="feature-card__icon"><div class="illust-box">
+                    <img src="assets/feat-independent.png" alt="Независимый от экосистем" loading="lazy">
+                  </div></div>
                   <h3 class="feature-card__title">Без лишних связок</h3>
                   <p class="feature-card__text">Нейтральный сервис. Без экосистемных зависимостей.</p>
                 </div>
@@ -191,12 +187,12 @@
               <h2 class="section__title section__title--dark" data-i18n="usecases.title">для работы<br>в реальном темпе</h2>
               <p class="section__subtitle section__subtitle--dark" data-i18n="usecases.subtitle">КОГДА ВАЖНЫ СКОРОСТЬ, ФОКУС И ПРОФЕССИОНАЛЬНЫЙ ФОРМАТ</p>
               <div class="uc-grid">
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M12 18h8M12 22h12M12 26h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3 class="uc-card__title">Команды и IT</h3><p class="uc-card__text">Дейли за 2 минуты: ссылка, созвон, работаем дальше</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="14" width="28" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 20h28" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="26" r="2" fill="currentColor"/><circle cx="20" cy="26" r="2" fill="currentColor"/><circle cx="26" cy="26" r="2" fill="currentColor"/><path d="M12 14V10a8 8 0 0116 0v4" stroke="currentColor" stroke-width="2"/></svg></div><h3 class="uc-card__title">Корпоративные встречи</h3><p class="uc-card__text">Без привязки к Teams или Google. Подключится любой контрагент</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="16" cy="14" r="5" stroke="currentColor" stroke-width="2"/><circle cx="28" cy="14" r="4" stroke="currentColor" stroke-width="2"/><path d="M6 32c0-5.523 4.477-10 10-10s10 4.523 10 10" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><h3 class="uc-card__title">HR и рекрутинг</h3><p class="uc-card__text">Кандидат переходит по ссылке — интервью начинается вовремя</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 22v-4a12 12 0 0124 0v4" stroke="currentColor" stroke-width="2" fill="none"/><rect x="6" y="22" width="6" height="10" rx="2" stroke="currentColor" stroke-width="2"/><rect x="28" y="22" width="6" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M34 30v2a4 4 0 01-4 4h-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><h3 class="uc-card__title">Консультации</h3><p class="uc-card__text">Клиент кликает по ссылке и сразу на консультации. Без регистрации</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 22l9-6 5 3 6-4 8 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></svg></div><h3 class="uc-card__title">Продажи и демо</h3><p class="uc-card__text">Демо с записью и показом экрана — клиент видит всё</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 8h24v24H8z" stroke="currentColor" stroke-width="2" fill="none" rx="3"/><path d="M14 16h12M14 20h8M14 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3 class="uc-card__title">Обучение</h3><p class="uc-card__text">Вебинары до 200 человек с записью и интерактивом</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-code.jpg" alt="Команды и IT" loading="lazy"></div></div><h3 class="uc-card__title">Команды и IT</h3><p class="uc-card__text">Дейли за 2 минуты: ссылка, созвон, работаем дальше</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-corporate.jpg" alt="Корпоративные встречи" loading="lazy"></div></div><h3 class="uc-card__title">Корпоративные встречи</h3><p class="uc-card__text">Без привязки к Teams или Google. Подключится любой контрагент</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-hr.jpg" alt="HR и рекрутинг" loading="lazy"></div></div><h3 class="uc-card__title">HR и рекрутинг</h3><p class="uc-card__text">Кандидат переходит по ссылке — интервью начинается вовремя</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-consult.png" alt="Консультации" loading="lazy"></div></div><h3 class="uc-card__title">Консультации</h3><p class="uc-card__text">Клиент кликает по ссылке и сразу на консультации. Без регистрации</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-sales.jpg" alt="Продажи и демо" loading="lazy"></div></div><h3 class="uc-card__title">Продажи и демо</h3><p class="uc-card__text">Демо с записью и показом экрана — клиент видит всё</p></article>
+                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-education.jpg" alt="Обучение" loading="lazy"></div></div><h3 class="uc-card__title">Обучение</h3><p class="uc-card__text">Вебинары до 200 человек с записью и интерактивом</p></article>
               </div>
             </div>
           </div>
@@ -470,16 +466,22 @@
         <a href="/" class="footer__logo" aria-label="Kommza">
           <img src="assets/logo-white.svg" alt="Kommza" width="120" height="18">
         </a>
+        <nav class="footer__nav">
+          <a href="#features" class="footer__link">Продукт</a>
+          <a href="#pricing" class="footer__link">Тарифы</a>
+          <a href="#faq" class="footer__link">Вопросы</a>
+        </nav>
         <div class="footer__links">
           <a href="/terms" class="footer__link" data-i18n="footer.terms">Пользовательское соглашение</a>
           <a href="/privacy" class="footer__link" data-i18n="footer.privacy">Политика конфиденциальности</a>
           <a href="/cookies" class="footer__link" data-i18n="footer.cookies">Куки</a>
         </div>
         <div class="footer__bottom">
-          <span class="footer__copy" data-i18n="footer.copy">© 2025 ООО ЛЕТС</span>
+          <span class="footer__copy" data-i18n="footer.copy">© 2026 ООО ЛЕТС</span>
           <div class="footer__social">
             <a href="https://t.me/kommza" aria-label="Telegram" class="social-icon">TG</a>
             <a href="https://vk.com/kommza" aria-label="VK" class="social-icon">VK</a>
+            <a href="https://linkedin.com/company/kommza" aria-label="LinkedIn" class="social-icon" rel="noopener noreferrer">IN</a>
           </div>
         </div>
       </div>
@@ -502,9 +504,11 @@
       </button>
       <h3 class="modal__title" data-i18n="modal.title">Запросить условия для бизнеса</h3>
       <p class="modal__text" data-i18n="modal.text">Расскажите, сколько человек в команде и какие функции нужны. Подберём план со скидкой и подключим менеджера.</p>
-      <form class="modal__form" id="b2bForm">
+      <form class="modal__form" id="b2bForm" novalidate>
         <input type="text" name="name" class="modal__input" placeholder="Имя" required data-i18n-placeholder="modal.name">
+        <span class="modal__error" id="errorName">Введите имя</span>
         <input type="email" name="email" class="modal__input" placeholder="Email" required data-i18n-placeholder="modal.email">
+        <span class="modal__error" id="errorEmail">Введите корректный email</span>
         <input type="text" name="company" class="modal__input" placeholder="Компания" data-i18n-placeholder="modal.company">
         <textarea name="message" class="modal__input modal__textarea" placeholder="Сообщение" rows="3" data-i18n-placeholder="modal.message"></textarea>
         <button type="submit" class="btn btn--white modal__submit" data-i18n="modal.submit">ОТПРАВИТЬ</button>
