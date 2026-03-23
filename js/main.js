@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initMagneticButtons();
   initStepsStagger();
+  initCookieBanner();
   initHpanelContentReveal();
 });
 
@@ -414,6 +415,26 @@ function initTiltCards() {
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
     });
+  });
+}
+
+/* --- Cookie Banner --- */
+function initCookieBanner() {
+  const banner = document.getElementById('cookieBanner');
+  const acceptBtn = document.getElementById('cookieAccept');
+  if (!banner || !acceptBtn) return;
+
+  // Check if already accepted
+  if (localStorage.getItem('kommza_cookies') === 'accepted') return;
+
+  // Show after 2 seconds
+  setTimeout(() => {
+    banner.classList.add('is-visible');
+  }, 2000);
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('kommza_cookies', 'accepted');
+    banner.classList.remove('is-visible');
   });
 }
 

@@ -22,14 +22,15 @@
   <div class="scroll-progress" id="scrollProgress"></div>
   <header class="header" id="header">
     <a href="/" class="header__logo" aria-label="Kommza — на главную">
-      <img src="assets/logo-white.svg" alt="Kommza" width="140" height="22">
+      <img src="assets/logo-white.svg" alt="Kommza" width="170" height="28">
     </a>
     <div class="header__right">
       <a href="https://hub.kommza.io" class="header__login" rel="noopener noreferrer" data-i18n="nav.login">Войти</a>
       <button class="header__menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="2"/>
-          <path class="header__menu-chevron" d="M11 10L15 14L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="header__menu-icon header__menu-icon--chevron" d="M11 10L15 14L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="header__menu-icon header__menu-icon--close" d="M10 10L18 18M18 10L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0"/>
         </svg>
       </button>
     </div>
@@ -118,41 +119,42 @@
             <div class="hpanel__inner">
               <h2 class="section__title" data-i18n="features.title">когда удобство<br>работает на результат</h2>
               <p class="section__subtitle" data-i18n="features.subtitle">УБРАЛИ ЛИШНЕЕ. ОСТАВИЛИ ГЛАВНОЕ.</p>
-              <div class="features__grid">
-                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="0">
-                  <div class="feature-card__icon"><div class="illust-box">
-                    <img src="assets/feat-vpn.png" alt="Без VPN — работает в России" loading="lazy">
-                  </div></div>
-                  <h3 class="feature-card__title">Без VPN</h3>
-                  <p class="feature-card__text">Никаких VPN. Работает везде в России.</p>
+              <div class="features__list">
+                <div class="feat-row" data-reveal="fade-up" data-reveal-delay="0">
+                  <span class="feat-row__struck">VPN</span>
+                  <div class="feat-row__content">
+                    <h3 class="feat-row__title">Не нужен</h3>
+                    <p class="feat-row__text">Никаких VPN. Работает везде в России.</p>
+                  </div>
                 </div>
-                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="200">
-                  <div class="feature-card__icon"><div class="illust-box">
-                    <img src="assets/feat-browser.png" alt="Работает прямо в браузере" loading="lazy">
-                  </div></div>
-                  <h3 class="feature-card__title">Без установки</h3>
-                  <p class="feature-card__text">Один клик — и вы на встрече. Никаких установок.</p>
+                <div class="feat-row" data-reveal="fade-up" data-reveal-delay="150">
+                  <span class="feat-row__struck">Установка</span>
+                  <div class="feat-row__content">
+                    <h3 class="feat-row__title">Не нужна</h3>
+                    <p class="feat-row__text">Один клик — и вы на встрече. Никаких установок.</p>
+                  </div>
                 </div>
-                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="400">
-                  <div class="feature-card__icon"><div class="illust-box">
-                    <img src="assets/feat-noreg.png" alt="Без регистрации для гостей" loading="lazy">
-                  </div></div>
-                  <h3 class="feature-card__title">Без регистрации</h3>
-                  <p class="feature-card__text">Приглашённые подключаются сразу, без аккаунта.</p>
+                <div class="feat-row" data-reveal="fade-up" data-reveal-delay="300">
+                  <span class="feat-row__struck">Регистрация</span>
+                  <div class="feat-row__content">
+                    <h3 class="feat-row__title">Не нужна</h3>
+                    <p class="feat-row__text">Приглашённые подключаются сразу, без аккаунта.</p>
+                  </div>
                 </div>
-                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="600">
-                  <div class="feature-card__icon"><div class="illust-box">
-                    <img src="assets/feat-calendar.png" alt="Синхронизация с календарями" loading="lazy">
-                  </div></div>
-                  <h3 class="feature-card__title">Без лишних календарей</h3>
-                  <p class="feature-card__text">Синхронизация с Яндекс и Google Календарём.</p>
+                <div class="feat-row" data-reveal="fade-up" data-reveal-delay="450">
+                  <span class="feat-row__struck">Календари</span>
+                  <div class="feat-row__content">
+                    <h3 class="feat-row__title">Уже подключены</h3>
+                    <p class="feat-row__text">Синхронизация с Яндекс и Google Календарём.</p>
+                  </div>
                 </div>
-                <div class="feature-card glow-card tilt-card" data-reveal="fade-up" data-reveal-delay="800">
-                  <div class="feature-card__icon"><div class="illust-box">
-                    <img src="assets/feat-independent.png" alt="Независимый от экосистем" loading="lazy">
-                  </div></div>
-                  <h3 class="feature-card__title">Без лишних связок</h3>
-                  <p class="feature-card__text">Нейтральный сервис. Без экосистемных зависимостей.</p>
+                <div class="feat-row" data-reveal="fade-up" data-reveal-delay="600">
+                  <span class="feat-row__struck">Экосистемы</span>
+                  <div class="feat-row__content">
+                    <h3 class="feat-row__title">Не при чём</h3>
+                    <p class="feat-row__text">Нейтральный сервис. Без экосистемных зависимостей.</p>
+                  </div>
+                  <div class="feat-row__accent"></div>
                 </div>
               </div>
             </div>
@@ -187,12 +189,12 @@
               <h2 class="section__title section__title--dark" data-i18n="usecases.title">для работы<br>в реальном темпе</h2>
               <p class="section__subtitle section__subtitle--dark" data-i18n="usecases.subtitle">КОГДА ВАЖНЫ СКОРОСТЬ, ФОКУС И ПРОФЕССИОНАЛЬНЫЙ ФОРМАТ</p>
               <div class="uc-grid">
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-code.jpg" alt="Команды и IT" loading="lazy"></div></div><h3 class="uc-card__title">Команды и IT</h3><p class="uc-card__text">Дейли за 2 минуты: ссылка, созвон, работаем дальше</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-corporate.jpg" alt="Корпоративные встречи" loading="lazy"></div></div><h3 class="uc-card__title">Корпоративные встречи</h3><p class="uc-card__text">Без привязки к Teams или Google. Подключится любой контрагент</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-hr.jpg" alt="HR и рекрутинг" loading="lazy"></div></div><h3 class="uc-card__title">HR и рекрутинг</h3><p class="uc-card__text">Кандидат переходит по ссылке — интервью начинается вовремя</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-consult.png" alt="Консультации" loading="lazy"></div></div><h3 class="uc-card__title">Консультации</h3><p class="uc-card__text">Клиент кликает по ссылке и сразу на консультации. Без регистрации</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-sales.jpg" alt="Продажи и демо" loading="lazy"></div></div><h3 class="uc-card__title">Продажи и демо</h3><p class="uc-card__text">Демо с записью и показом экрана — клиент видит всё</p></article>
-                <article class="uc-card glow-card tilt-card"><div class="uc-card__icon"><div class="icon-box"><img src="assets/icon-education.jpg" alt="Обучение" loading="lazy"></div></div><h3 class="uc-card__title">Обучение</h3><p class="uc-card__text">Вебинары до 200 человек с записью и интерактивом</p></article>
+                <article class="uc-card glow-card tilt-card"><h3 class="uc-card__title">Команды и IT</h3><p class="uc-card__text">Дейли за 2 минуты: ссылка, созвон, работаем дальше</p></article>
+                <article class="uc-card glow-card tilt-card"><h3 class="uc-card__title">Корпоративные встречи</h3><p class="uc-card__text">Без привязки к Teams или Google. Подключится любой контрагент</p></article>
+                <article class="uc-card glow-card tilt-card"><h3 class="uc-card__title">HR и рекрутинг</h3><p class="uc-card__text">Кандидат переходит по ссылке — интервью начинается вовремя</p></article>
+                <article class="uc-card glow-card tilt-card"><h3 class="uc-card__title">Консультации</h3><p class="uc-card__text">Клиент кликает по ссылке и сразу на консультации. Без регистрации</p></article>
+                <article class="uc-card glow-card tilt-card"><h3 class="uc-card__title">Продажи и демо</h3><p class="uc-card__text">Демо с записью и показом экрана — клиент видит всё</p></article>
+                <article class="uc-card glow-card tilt-card"><h3 class="uc-card__title">Обучение</h3><p class="uc-card__text">Вебинары до 200 человек с записью и интерактивом</p></article>
               </div>
             </div>
           </div>
@@ -288,6 +290,7 @@
               <li data-i18n="ai.f3">Готовит резюме и протоколы</li>
               <li data-i18n="ai.f4">Напоминает о договоренностях</li>
             </ul>
+            <img src="assets/ai-assistant-v1.png" alt="AI-ассистент пишет резюме встречи" class="ai__photo" loading="lazy">
           </div>
         </div>
       </div>
@@ -342,7 +345,7 @@
               <p class="price-card__who">Для команд</p>
               <div class="price-card__price">
                 <span class="price-card__amount">850&nbsp;₽</span>
-                <span class="price-card__period" data-i18n="pricing.perUser">/ чел / мес</span>
+                <span class="price-card__period" data-i18n="pricing.perUser">/ мес</span>
               </div>
             </div>
             <ul class="price-card__features">
@@ -361,7 +364,7 @@
               <p class="price-card__who">Для компаний</p>
               <div class="price-card__price">
                 <span class="price-card__amount">9&nbsp;600&nbsp;₽</span>
-                <span class="price-card__period" data-i18n="pricing.perMonthBase">/ мес за 8 чел</span>
+                <span class="price-card__period" data-i18n="pricing.perMonthBase">/ мес</span>
               </div>
             </div>
             <ul class="price-card__features">
@@ -383,62 +386,44 @@
 
     <!-- ===== 7. FAQ ===== -->
     <section class="section section--faq" id="faq">
-      <div class="container container--narrow">
+      <div class="container">
         <h2 class="section__title" data-reveal="fade-up" data-i18n="faq.title">частые<br>вопросы</h2>
 
-        <div class="faq" data-reveal="fade-up" data-reveal-delay="100">
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false" data-i18n="faq.q1">
-              Нужно ли устанавливать приложение?
-              <span class="faq__icon">+</span>
-            </button>
-            <div class="faq__answer">
-              <p data-i18n="faq.a1">Не обязательно. Коммза работает прямо в браузере — на компьютере, планшете и телефоне. Мобильное приложение доступно для удобства, но для участия во встрече установка не требуется.</p>
+        <div class="faq-cards" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="faq-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="faq-card__inner">
+              <div class="faq-card__front"><h3 class="faq-card__q">Нужно ли устанавливать приложение?</h3><span class="faq-card__hint">↻</span></div>
+              <div class="faq-card__back"><p class="faq-card__a">Не обязательно. Коммза работает прямо в браузере — на компьютере, планшете и телефоне.</p></div>
             </div>
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false" data-i18n="faq.q2">
-              Нужна ли регистрация?
-              <span class="faq__icon">+</span>
-            </button>
-            <div class="faq__answer">
-              <p data-i18n="faq.a2">Нет. Регистрация нужна только если важны расширенные функции, закрытые встречи, вебинары или стримы. Гости просто переходят по ссылке и подключаются.</p>
+          <div class="faq-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="faq-card__inner">
+              <div class="faq-card__front"><h3 class="faq-card__q">Нужна ли регистрация?</h3><span class="faq-card__hint">↻</span></div>
+              <div class="faq-card__back"><p class="faq-card__a">Нет. Гости просто переходят по ссылке и подключаются. Регистрация — только для расширенных функций.</p></div>
             </div>
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false" data-i18n="faq.q3">
-              Подходит ли Коммза для работы?
-              <span class="faq__icon">+</span>
-            </button>
-            <div class="faq__answer">
-              <p data-i18n="faq.a3">Да. Коммза создана для рабочих форматов: командных синхронизаций, интервью, консультаций и встреч с клиентами.</p>
+          <div class="faq-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="faq-card__inner">
+              <div class="faq-card__front"><h3 class="faq-card__q">Подходит ли Коммза для работы?</h3><span class="faq-card__hint">↻</span></div>
+              <div class="faq-card__back"><p class="faq-card__a">Да. Командные синхронизации, интервью, консультации и встречи с клиентами.</p></div>
             </div>
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false" data-i18n="faq.q4">
-              Насколько Коммза безопасна?
-              <span class="faq__icon">+</span>
-            </button>
-            <div class="faq__answer">
-              <p data-i18n="faq.a4">Коммза использует серверы на территории Российской Федерации и соблюдает требования по защите данных. Сервис не привязан к социальным сетям и личным экосистемам.</p>
+          <div class="faq-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="faq-card__inner">
+              <div class="faq-card__front"><h3 class="faq-card__q">Насколько Коммза безопасна?</h3><span class="faq-card__hint">↻</span></div>
+              <div class="faq-card__back"><p class="faq-card__a">Серверы в РФ. Соблюдаем требования по защите данных. Не привязаны к соцсетям.</p></div>
             </div>
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false" data-i18n="faq.q5">
-              Что с AI-ассистентом — он уже доступен?
-              <span class="faq__icon">+</span>
-            </button>
-            <div class="faq__answer">
-              <p data-i18n="faq.a5">AI-функции запускаются поэтапно. Ассистент будет помогать фиксировать итоги встреч и избавлять от ручной рутины.</p>
+          <div class="faq-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="faq-card__inner">
+              <div class="faq-card__front"><h3 class="faq-card__q">AI-ассистент уже доступен?</h3><span class="faq-card__hint">↻</span></div>
+              <div class="faq-card__back"><p class="faq-card__a">AI-функции запускаются поэтапно. Ассистент поможет фиксировать итоги и избавит от рутины.</p></div>
             </div>
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false" data-i18n="faq.q6">
-              Можно ли пользоваться бесплатно?
-              <span class="faq__icon">+</span>
-            </button>
-            <div class="faq__answer">
-              <p data-i18n="faq.a6">Да. Пользуйтесь бесплатно для повседневных задач и переходите на платный тариф, когда потребуется больше.</p>
+          <div class="faq-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="faq-card__inner">
+              <div class="faq-card__front"><h3 class="faq-card__q">Можно ли бесплатно?</h3><span class="faq-card__hint">↻</span></div>
+              <div class="faq-card__back"><p class="faq-card__a">Да. Пользуйтесь бесплатно и переходите на платный тариф, когда потребуется больше.</p></div>
             </div>
           </div>
         </div>
@@ -515,6 +500,18 @@
       </form>
       <div class="modal__success" id="modalSuccess" hidden>
         <p data-i18n="modal.success">Спасибо! Наш менеджер свяжется с вами в течение 2 часов в рабочие дни.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COOKIE BANNER ===== -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__inner">
+      <span class="cookie-banner__emoji">🍪</span>
+      <p class="cookie-banner__text">Мы собираем кукисы. Не те, с шоколадом — но тоже полезные.</p>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn" id="cookieAccept">Ладно, берите</button>
+        <a href="/cookies" class="cookie-banner__link">Подробнее</a>
       </div>
     </div>
   </div>

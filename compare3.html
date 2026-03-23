@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — 4 варианта</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Rubik', sans-serif; background: #090C0F; color: #C6CBD1; }
+    h1 { font-size: 48px; font-weight: 900; font-style: italic; color: #fff; text-align: center; padding: 60px 20px 20px; }
+    h2 { font-size: 28px; font-weight: 900; font-style: italic; color: #FFFC1F; padding: 50px 40px 24px; max-width: 900px; margin: 0 auto; }
+    .block { max-width: 900px; margin: 0 auto; padding: 0 40px 60px; }
+    .divider { height: 1px; background: #2B2E33; max-width: 900px; margin: 0 auto; }
+
+    /* === А: Жёлтое "Без" === */
+    .a-row { display: flex; align-items: baseline; gap: 20px; padding: 28px 0; border-bottom: 1px solid #2B2E33; }
+    .a-row:last-child { border-bottom: none; }
+    .a-keyword { font-size: 48px; font-weight: 900; font-style: italic; color: #FFFC1F; flex-shrink: 0; min-width: 120px; }
+    .a-content h3 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .a-content p { font-size: 16px; color: #C6CBD1; }
+
+    /* === Б: Точка • === */
+    .b-row { display: flex; align-items: center; gap: 24px; padding: 28px 0; border-bottom: 1px solid #2B2E33; }
+    .b-row:last-child { border-bottom: none; }
+    .b-dot { font-size: 40px; color: #FFFC1F; flex-shrink: 0; line-height: 1; }
+    .b-content h3 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .b-content p { font-size: 16px; color: #C6CBD1; }
+
+    /* === В: Перечёркнутые === */
+    .c-row { display: flex; align-items: center; gap: 32px; padding: 28px 0; border-bottom: 1px solid #2B2E33; }
+    .c-row:last-child { border-bottom: none; }
+    .c-struck { font-size: 32px; font-weight: 900; font-style: italic; color: #7A8089; text-decoration: line-through; text-decoration-color: #FE204F; text-decoration-thickness: 3px; flex-shrink: 0; min-width: 200px; }
+    .c-content h3 { font-size: 22px; font-weight: 700; color: #FFFC1F; margin-bottom: 4px; }
+    .c-content p { font-size: 16px; color: #C6CBD1; }
+
+    /* === Г: Только крупный текст === */
+    .d-row { padding: 32px 0; border-bottom: 1px solid #2B2E33; }
+    .d-row:last-child { border-bottom: none; }
+    .d-row h3 { font-size: 36px; font-weight: 900; font-style: italic; color: #fff; margin-bottom: 8px; }
+    .d-row p { font-size: 20px; color: #C6CBD1; line-height: 1.4; }
+  </style>
+</head>
+<body>
+
+<h1>features — 4 варианта</h1>
+
+<!-- А -->
+<h2>А — жёлтое «без»</h2>
+<div class="block">
+  <div class="a-row"><span class="a-keyword">без</span><div class="a-content"><h3>VPN</h3><p>Никаких VPN. Работает везде в России.</p></div></div>
+  <div class="a-row"><span class="a-keyword">без</span><div class="a-content"><h3>установки</h3><p>Один клик — и вы на встрече. Никаких установок.</p></div></div>
+  <div class="a-row"><span class="a-keyword">без</span><div class="a-content"><h3>регистрации</h3><p>Приглашённые подключаются сразу, без аккаунта.</p></div></div>
+  <div class="a-row"><span class="a-keyword">без</span><div class="a-content"><h3>лишних календарей</h3><p>Синхронизация с Яндекс и Google Календарём.</p></div></div>
+  <div class="a-row"><span class="a-keyword">без</span><div class="a-content"><h3>лишних связок</h3><p>Нейтральный сервис. Без экосистемных зависимостей.</p></div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Б -->
+<h2>Б — точка •</h2>
+<div class="block">
+  <div class="b-row"><span class="b-dot">•</span><div class="b-content"><h3>Без VPN</h3><p>Никаких VPN. Работает везде в России.</p></div></div>
+  <div class="b-row"><span class="b-dot">•</span><div class="b-content"><h3>Без установки</h3><p>Один клик — и вы на встрече. Никаких установок.</p></div></div>
+  <div class="b-row"><span class="b-dot">•</span><div class="b-content"><h3>Без регистрации</h3><p>Приглашённые подключаются сразу, без аккаунта.</p></div></div>
+  <div class="b-row"><span class="b-dot">•</span><div class="b-content"><h3>Без лишних календарей</h3><p>Синхронизация с Яндекс и Google Календарём.</p></div></div>
+  <div class="b-row"><span class="b-dot">•</span><div class="b-content"><h3>Без лишних связок</h3><p>Нейтральный сервис. Без экосистемных зависимостей.</p></div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- В -->
+<h2>В — перечёркнутые слова</h2>
+<div class="block">
+  <div class="c-row"><span class="c-struck">VPN</span><div class="c-content"><h3>Не нужен</h3><p>Никаких VPN. Работает везде в России.</p></div></div>
+  <div class="c-row"><span class="c-struck">Установка</span><div class="c-content"><h3>Не нужна</h3><p>Один клик — и вы на встрече. Никаких установок.</p></div></div>
+  <div class="c-row"><span class="c-struck">Регистрация</span><div class="c-content"><h3>Не нужна</h3><p>Приглашённые подключаются сразу, без аккаунта.</p></div></div>
+  <div class="c-row"><span class="c-struck">Календари</span><div class="c-content"><h3>Уже подключены</h3><p>Синхронизация с Яндекс и Google Календарём.</p></div></div>
+  <div class="c-row"><span class="c-struck">Экосистемы</span><div class="c-content"><h3>Не при чём</h3><p>Нейтральный сервис. Без экосистемных зависимостей.</p></div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Г -->
+<h2>Г — только крупный текст</h2>
+<div class="block">
+  <div class="d-row"><h3>Без VPN</h3><p>Никаких VPN. Работает везде в России.</p></div>
+  <div class="d-row"><h3>Без установки</h3><p>Один клик — и вы на встрече. Никаких установок.</p></div>
+  <div class="d-row"><h3>Без регистрации</h3><p>Приглашённые подключаются сразу, без аккаунта.</p></div>
+  <div class="d-row"><h3>Без лишних календарей</h3><p>Синхронизация с Яндекс и Google Календарём.</p></div>
+  <div class="d-row"><h3>Без лишних связок</h3><p>Нейтральный сервис. Без экосистемных зависимостей.</p></div>
+</div>
+
+<div style="height: 80px;"></div>
+</body>
+</html>
