@@ -131,6 +131,7 @@ ul { list-style: none; }
   border: 2px solid var(--c-text-dim);
 }
 .btn--outline:hover { border-color: var(--c-white); }
+.btn__short { display: none; }
 
 /* --- Reveal Animations --- */
 [data-reveal] {
@@ -1563,69 +1564,6 @@ ul { list-style: none; }
 }
 
 /* ========================================
-   RESPONSIVE
-   ======================================== */
-@media (max-width: 959px) {
-  /* Disable horizontal scroll-driven panels on tablets and below */
-  .hpanel-wrap { height: auto; }
-  .hpanel-sticky { position: relative; height: auto; overflow: visible; }
-  .hpanel-track {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    transform: none !important;
-  }
-  .hpanel {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    padding: clamp(60px, 10vh, 120px) 0;
-  }
-  .hpanel-dots { display: none; }
-  .features__grid { grid-template-columns: repeat(2, 1fr); }
-  .features__grid .feature-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 50%;
-    justify-self: center;
-  }
-  .uc-grid { grid-template-columns: repeat(2, 1fr); }
-  .promise__layout { grid-template-columns: 1fr; }
-  .promise__mockup { margin-top: 32px; }
-  .device-laptop { transform: none; max-width: 360px; }
-  .platform__devices { flex-wrap: wrap; }
-  .device-laptop--small { max-width: 100%; }
-  .ai__layout { grid-template-columns: 1fr; }
-  .pricing__grid { grid-template-columns: repeat(2, 1fr); }
-  .price-card--recommended { transform: none; }
-  .price-card--recommended:hover { transform: translateY(-4px); }
-  .steps { flex-wrap: wrap; gap: 8px; }
-  .steps__line { width: 32px; }
-}
-
-@media (max-width: 639px) {
-  .faq-cards { grid-template-columns: 1fr; }
-  .hero__title { text-align: left; padding: 0 var(--gutter); }
-  .hero__content { align-items: flex-start; text-align: left; }
-  .hero__subtitle { text-align: left; }
-  .hero__cta { align-items: flex-start; }
-  .section--promise { min-height: auto; }
-  .features__grid { grid-template-columns: 1fr; }
-  .features__grid .feature-card:last-child { max-width: 100%; }
-  .uc-grid { grid-template-columns: 1fr; }
-  .pricing__grid { grid-template-columns: 1fr; }
-  .btn { padding: 16px 32px; width: 100%; }
-  .sticky-cta__btn { padding: 14px 20px; font-size: 13px; }
-  .steps { flex-direction: column; }
-  .steps__line { width: 2px; height: 24px; margin: 0; }
-  .section__title { text-align: left; }
-  .section__subtitle { text-align: left; }
-  .final-cta__title { text-align: left; }
-  .final-cta__subtitle { text-align: left; }
-  .final-cta__actions { align-items: flex-start; }
-  .section--final-cta { text-align: left; }
-}
-
-/* ========================================
    COOKIE BANNER
    ======================================== */
 .cookie-banner {
@@ -1682,3 +1620,377 @@ ul { list-style: none; }
 
 /* Scroll margin for anchor navigation */
 section[id] { scroll-margin-top: var(--header-h); }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* --- Touch device overrides --- */
+@media (hover: none) and (pointer: coarse) {
+  .feat-row:hover { padding-left: 0; }
+  .feat-row:hover .feat-row__struck { color: var(--c-text-dim); }
+  .feat-row:hover .feat-row__title { color: var(--c-yellow); }
+  .glow-card::before { display: none; }
+  .btn:hover { transform: none; }
+  .price-card:hover { transform: none; }
+  .price-card--recommended:hover { transform: none; }
+  .uc-card:hover { transform: none; box-shadow: none; }
+  .tilt-card { transform: none !important; }
+  .cookie-banner__btn:hover { transform: none; }
+
+  /* Min 44px tap targets */
+  .footer__link {
+    padding: 8px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .social-icon {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lang-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .platform__badge {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .cookie-banner__link {
+    padding: 8px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .chat-window__body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* --- Tablet (max-width: 959px) --- */
+@media (max-width: 959px) {
+  /* Prevent horizontal overflow on mobile */
+  html { overflow-x: hidden; }
+
+  /* Horizontal scroll panels → vertical stack */
+  .hpanel-wrap { height: auto; }
+  .hpanel-sticky { position: relative; height: auto; overflow: visible; }
+  .hpanel-track {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: none !important;
+  }
+  .hpanel {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: clamp(48px, 8vh, 100px) 0;
+  }
+  .hpanel-dots { display: none; }
+
+  /* Grids → 2 columns */
+  .features__grid { grid-template-columns: repeat(2, 1fr); }
+  .features__grid .feature-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    justify-self: center;
+  }
+  .uc-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  /* Promise → single column */
+  .promise__layout { grid-template-columns: 1fr; }
+  .promise__mockup { margin-top: 32px; }
+
+  /* Devices */
+  .device-laptop { transform: none; max-width: 360px; }
+  .device-laptop--small { max-width: 100%; }
+  .platform__devices {
+    flex-direction: column;
+    align-items: center;
+  }
+  .device-laptop--platform { max-width: 100%; }
+  .device-phone--large { width: 200px; }
+
+  /* AI section → single column */
+  .ai__layout { grid-template-columns: 1fr; }
+  .chat-window__body { max-height: 340px; }
+  .chat-bubble p { max-width: 100%; }
+
+  /* Pricing */
+  .price-card--recommended { transform: none; }
+  .price-card--recommended:hover { transform: translateY(-4px); }
+
+  /* Steps */
+  .steps { flex-wrap: wrap; gap: 8px; }
+  .steps__line { width: 32px; }
+
+  /* Header & menu — prevent overflow */
+  .header { max-width: 100vw; width: 100%; }
+  .menu-overlay { max-width: 100vw; }
+  .header__login { padding: 8px 20px; }
+
+  /* Hero title — hide dash on tablet/mobile */
+  .hero__title br { display: none; }
+  .hero__title span { display: block; }
+  .hero__dash { display: none; }
+
+  /* Buttons */
+  .btn { padding: 20px 40px; }
+
+  /* Feature rows — stack struck text above content */
+  .feat-row { flex-wrap: wrap; }
+  .feat-row__struck { min-width: 0; width: auto; }
+
+  /* Sticky CTA */
+  .sticky-cta { max-width: calc(100% - 40px); }
+  .sticky-cta__btn { padding: 16px 28px; font-size: 14px; }
+
+  /* Cookie banner — prevent overflow */
+  .cookie-banner {
+    width: calc(100% - 40px);
+    left: 20px;
+    transform: translateX(0) translateY(200px);
+  }
+  .cookie-banner.is-visible {
+    transform: translateX(0) translateY(0);
+  }
+  .cookie-banner__inner {
+    flex-wrap: wrap;
+    border-radius: var(--radius-lg);
+  }
+  .cookie-banner__text {
+    white-space: normal;
+    flex: 1 1 100%;
+  }
+  .cookie-banner__emoji { display: none; }
+
+  /* Footer */
+  .footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  /* Section spacing */
+  .section { padding: clamp(60px, 10vh, 140px) 0; }
+
+  /* Modal */
+  .modal__content { padding: clamp(24px, 4vw, 48px); }
+}
+
+/* --- Phone (max-width: 639px) --- */
+@media (max-width: 639px) {
+  /* Grids → single column */
+  .faq-cards { grid-template-columns: 1fr; }
+  .features__grid { grid-template-columns: 1fr; }
+  .features__grid .feature-card:last-child { max-width: 100%; }
+  .uc-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .uc-card { padding: 24px; border-radius: 24px; }
+  .uc-card__title { font-size: 17px; margin-bottom: 4px; }
+  .uc-card__text { font-size: 14px; }
+  /* Pricing — 2 columns */
+  .pricing__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .price-card { padding: 24px; border-radius: 28px; }
+  .price-card__header { margin-bottom: 20px; }
+  .price-card__name { font-size: 22px; }
+  .price-card__amount { font-size: 30px; }
+  .price-card__features { gap: 12px; margin-bottom: 24px; }
+  .price-card__features li { font-size: 14px; }
+  .price-card .btn { padding: 14px 16px; font-size: 12px; letter-spacing: 0.5px; white-space: normal; line-height: 1.3; }
+  .btn__full { display: none; }
+  .btn__short { display: inline; }
+  .price-card__badge { font-size: 10px; padding: 4px 16px; top: -12px; }
+
+  /* FAQ — 2 columns */
+  .faq-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .faq-card { min-height: 150px; }
+  .faq-card__inner { min-height: 150px; }
+  .faq-card__front,
+  .faq-card__back { padding: 24px; border-radius: 24px; }
+  .faq-card__q { font-size: 16px; }
+  .faq-card__hint { font-size: 22px; margin-top: 10px; }
+  .faq-card__a { font-size: 15px; }
+
+  /* Hero — left aligned, smaller title; hide <br> so spans flow as blocks */
+  .hero__title {
+    text-align: left;
+    padding: 0 var(--gutter);
+    margin-bottom: 24px;
+    font-size: clamp(36px, 10vw, 52px);
+  }
+  .hero__title br { display: none; }
+  .hero__title span { display: block; }
+  .hero__content { align-items: flex-start; text-align: left; }
+  .hero__subtitle { text-align: left; margin-bottom: 32px; }
+  .hero__cta { align-items: flex-start; }
+
+  /* Section titles — left aligned */
+  .section__title { text-align: left; }
+  .section__subtitle { text-align: left; }
+  .final-cta__title { text-align: left; }
+  .final-cta__subtitle { text-align: left; margin-bottom: 32px; }
+  .final-cta__actions { align-items: flex-start; }
+  .section--final-cta { text-align: left; min-height: 50vh; }
+
+  /* Promise */
+  .section--promise { min-height: auto; }
+  .promise__mockup { margin-top: 24px; }
+  .promise__screenshot { border-radius: var(--radius-md); }
+  .promise__social { flex-wrap: wrap; }
+
+  /* Header — compact */
+  .header { height: 60px; }
+  .header__login { padding: 8px 16px; font-size: 12px; }
+  section[id] { scroll-margin-top: 60px; }
+  .section--hero { padding-top: calc(60px + 24px); }
+
+  /* Buttons — full width */
+  .btn { padding: 16px 32px; width: 100%; }
+
+  /* Feature rows — stacked on mobile */
+  .feat-row { flex-direction: column; gap: 4px; padding: 16px 0; }
+  .feat-row__struck { font-size: 20px; min-width: 0; width: auto; }
+  .feat-row__content { width: 100%; }
+  .feat-row__title { font-size: 17px; margin-bottom: 2px; }
+  .feat-row__text { font-size: 15px; }
+  .features__list { margin-top: 28px; }
+
+  /* Steps — vertical */
+  .steps { flex-direction: column; }
+  .steps__line { width: 2px; height: 24px; margin: 0; }
+  .steps__circle { width: 56px; height: 56px; font-size: 22px; }
+  .steps__label { white-space: normal; text-align: center; }
+
+  /* Devices */
+  .device-phone--large { width: 160px; }
+  .device-laptop { padding: 6px 6px 0; }
+  .platform__badges { flex-wrap: wrap; justify-content: center; }
+
+  /* AI chat — compact */
+  .chat-window__body { max-height: 280px; padding: 16px 12px; }
+  .chat-bubble { gap: 8px; }
+  .chat-bubble__avatar { width: 28px; height: 28px; font-size: 10px; }
+  .chat-bubble p { font-size: 14px; padding: 12px 16px; }
+  .chat-input { padding: 10px 12px; }
+  .chat-input input { padding: 8px 12px; font-size: 13px; }
+
+  /* Pricing cards */
+  .price-card { padding: clamp(24px, 5vw, 40px); }
+  .price-card__features { margin-bottom: 24px; }
+  .price-card__features li { font-size: 14px; }
+
+  /* FAQ — shorter cards */
+  .faq-card { min-height: 180px; }
+  .faq-card__inner { min-height: 180px; }
+  .faq-card__a { font-size: 15px; }
+  .faq-card__back { overflow-y: auto; }
+
+  /* Sticky CTA — single button on mobile */
+  .sticky-cta {
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    width: auto;
+    max-width: calc(100% - 32px);
+  }
+  .sticky-cta.is-visible {
+    transform: translateX(-50%) translateY(0);
+  }
+  .sticky-cta__btn { padding: 14px 24px; font-size: 13px; }
+  .sticky-cta__btn:last-child { display: none; }
+  .sticky-cta__divider { display: none; }
+
+  /* Cookie banner — above sticky CTA */
+  .cookie-banner {
+    bottom: 80px;
+    width: calc(100% - 32px);
+    left: 16px;
+  }
+  .cookie-banner__inner {
+    padding: 16px 20px;
+    gap: 12px;
+    border-radius: var(--radius-md);
+  }
+  .cookie-banner__text { font-size: 13px; line-height: 1.4; }
+  .cookie-banner__btn { padding: 10px 20px; font-size: 13px; }
+  .cookie-banner__link { font-size: 12px; }
+
+  /* Footer — stacked */
+  .footer { padding: 32px 0; }
+  .footer__nav { flex-direction: column; gap: 16px; }
+  .footer__links { flex-direction: column; gap: 16px; }
+
+  /* Modal — compact */
+  .modal__content {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+    width: calc(100% - 32px);
+  }
+  .modal__title { font-size: 22px; }
+  .modal__text { font-size: 15px; margin-bottom: 24px; }
+  .modal__input { padding: 14px 16px; }
+
+  /* Section & panel spacing — tighter */
+  .section { padding: clamp(48px, 8vh, 100px) 0; }
+  .section__subtitle { margin-bottom: clamp(24px, 4vh, 48px); }
+  .hpanel { padding: clamp(40px, 6vh, 80px) 0; }
+
+  /* Marquee */
+  .marquee { padding: 12px 0; }
+}
+
+/* --- Ultra-narrow (max-width: 399px) — iPhone SE, Galaxy Fold --- */
+@media (max-width: 399px) {
+  /* Cookie banner — vertical stack */
+  .cookie-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .cookie-banner__actions { width: 100%; justify-content: center; }
+  .cookie-banner__text { text-align: center; }
+
+  /* Pricing & FAQ — back to 1 col on ultra-narrow */
+  .pricing__grid { grid-template-columns: 1fr; }
+  .faq-cards { grid-template-columns: 1fr; }
+  .price-card__amount { font-size: 28px; }
+  .price-card__name { font-size: 20px; }
+
+  /* Hero */
+  .hero__title { font-size: clamp(30px, 9vw, 40px); }
+
+  /* Feature rows */
+  .feat-row__struck { font-size: 20px; }
+
+  /* Buttons */
+  .btn { padding: 14px 24px; font-size: 14px; }
+
+  /* Steps */
+  .steps__circle { width: 48px; height: 48px; font-size: 18px; }
+
+  /* Chat bubbles */
+  .chat-bubble p { padding: 10px 14px; font-size: 13px; }
+  .chat-bubble__avatar { width: 24px; height: 24px; font-size: 9px; }
+
+  /* UC cards — single column on ultra-narrow */
+  .uc-grid { grid-template-columns: 1fr; }
+  .uc-card { padding: 20px; }
+  .uc-card__title { font-size: 16px; }
+  .uc-card__text { font-size: 13px; }
+
+  /* FAQ */
+  .faq-card { min-height: 160px; }
+  .faq-card__inner { min-height: 160px; }
+  .faq-card__q { font-size: 16px; }
+  .faq-card__a { font-size: 14px; }
+}
