@@ -697,7 +697,7 @@ ul { list-style: none; }
 }
 .platform__devices {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: clamp(32px, 5vw, 80px);
   margin-top: 40px;
