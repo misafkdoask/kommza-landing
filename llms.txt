@@ -34,3 +34,7 @@ Kommza — платформа для видеовстреч, вебинаров 
 - Начать встречу: https://meeting.kommza.io/unregistered-meeting
 - Telegram: https://t.me/kommza
 - VK: https://vk.com/kommza
+
+## Подробнее
+
+- Полная версия (EN+RU): https://kommza.io/llms-full.txt

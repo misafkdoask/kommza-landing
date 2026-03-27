@@ -1,0 +1,96 @@
+# Kommza (Коммза) — Full Reference
+
+> Video conferencing service — instant calls without VPN, without installation, without registration.
+> By ООО ЛЕТС (LLC LETS).
+
+## What is Kommza?
+
+Kommza is a video conferencing platform for meetings, webinars, and streams.
+It works in the browser on any device — no app install needed. Guests join via link
+without registration. Developed by ООО ЛЕТС (LLC LETS).
+
+Коммза — платформа для видеовстреч, вебинаров и стримов. Работает в браузере
+на любом устройстве. Серверы в России, не требует VPN.
+
+## Key Differentiators
+
+- No VPN needed — local servers, accessible without VPN
+- No installation — works directly in browser
+- No registration for guests — join via link
+- Webinars up to 200 participants with recording
+- Calendar sync with Yandex Calendar and Google Calendar
+- AI assistant (coming soon) — meeting summaries, reminders, scheduling
+- Mobile apps for iOS and Android
+- Ecosystem-independent — not tied to any platform
+
+## Use Cases
+
+### Teams & IT
+Daily standups in 2 minutes: link, call, back to work.
+
+### Corporate Meetings
+Vendor-neutral. Not tied to Teams or Google. Any counterparty can join.
+
+### HR & Recruiting
+Candidate clicks the link — interview starts on time. No app install required.
+
+### Consulting
+Client clicks the link and joins consultation instantly. No registration.
+
+### Sales & Demo
+Screen sharing with recording — client sees everything.
+
+### Education
+Webinars up to 200 people with recording and interactive features.
+
+## Pricing (RUB, monthly)
+
+| Plan     | Price            | Max Users | Meeting Duration | Key Features                              |
+|----------|------------------|-----------|------------------|-------------------------------------------|
+| Start    | 0 ₽ (free)       | 10        | 1 hour           | Background blur, 1 trial webinar          |
+| Pro      | 450 ₽/month      | 20        | 2 hours          | 10 recordings, 1 webinar/month, backgrounds |
+| Team     | 850 ₽/user/month | 100       | Unlimited        | 30 recordings, unlimited webinars, AI assistant |
+| Business | 9,600 ₽/month    | 200       | Unlimited        | 100 recordings, all features, priority support |
+
+Payment: monthly or discounted for longer periods. Scale up by adding users as needed.
+
+## FAQ
+
+Q: Do I need to install an app?
+A: No. Kommza works in the browser on computer, tablet, and phone. Mobile apps for iOS and Android are also available.
+
+Q: Is registration required?
+A: No. Guests join via link instantly. Registration is only needed for advanced features like recordings, webinars, and team management.
+
+Q: Is Kommza suitable for business use?
+A: Yes. Team syncs, interviews, consultations, demos, and client meetings. Webinars up to 200 participants with recording.
+
+Q: How secure is Kommza?
+A: Dedicated local servers. We comply with data protection requirements. The service is not tied to social networks or ecosystems.
+
+Q: Is the AI assistant available?
+A: AI features are launching in phases. The assistant will help capture meeting outcomes, prepare protocols, and remind about agreements.
+
+Q: Can I use it for free?
+A: Yes. The Start plan is free — up to 10 participants and meetings up to 1 hour. Upgrade when you need more.
+
+## Technical Details
+
+- Platform: Web (any modern browser), iOS, Android
+- Technology: WebRTC + Janus Gateway
+- Dashboard: hub.kommza.io
+- Instant meeting (no registration): meeting.kommza.io/unregistered-meeting
+
+## Company
+
+- Legal entity: ООО ЛЕТС (LLC LETS)
+- Website: https://kommza.io
+- Dashboard: https://hub.kommza.io
+- Start a meeting: https://meeting.kommza.io/unregistered-meeting
+- Telegram: https://t.me/kommza
+- VK: https://vk.com/kommza
+- LinkedIn: https://linkedin.com/company/kommza
+
+## See Also
+
+- Short version: https://kommza.io/llms.txt
