@@ -710,7 +710,7 @@ ul { list-style: none; }
 .device-laptop--platform .device-laptop__screen {
   aspect-ratio: auto;
 }
-.device-phone--large { width: 260px; }
+.device-phone--large { width: 280px; }
 .platform__phone-col {
   display: flex;
   flex-direction: column;
