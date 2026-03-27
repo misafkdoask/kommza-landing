@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStepsStagger();
   initCookieBanner();
   initHpanelContentReveal();
+  initPlatformFlip();
 });
 
 /* --- Reveal Animations (IntersectionObserver) --- */
@@ -410,10 +411,33 @@ function initTiltCards() {
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(800px) rotateY(${x * 8}deg) rotateX(${y * -8}deg) translateY(-4px)`;
+
+      card.classList.add('is-tilting');
+      const flipParent = card.closest('.flip-target');
+      const scrollRY = flipParent
+        ? parseFloat(getComputedStyle(flipParent).getPropertyValue('--scroll-ry')) || 0
+        : 0;
+      const hoverRY = x * 8;
+      const hoverRX = y * -8;
+
+      if (flipParent) {
+        flipParent.style.transform =
+          `rotateY(${scrollRY + hoverRY}deg) rotateX(${hoverRX}deg) translateY(-4px)`;
+      } else {
+        card.style.transform =
+          `perspective(800px) rotateY(${hoverRY}deg) rotateX(${hoverRX}deg) translateY(-4px)`;
+      }
     });
+
     card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
+      card.classList.remove('is-tilting');
+      const flipParent = card.closest('.flip-target');
+      if (flipParent) {
+        const scrollRY = parseFloat(getComputedStyle(flipParent).getPropertyValue('--scroll-ry')) || 0;
+        flipParent.style.transform = `rotateY(${scrollRY}deg)`;
+      } else {
+        card.style.transform = '';
+      }
     });
   });
 }
@@ -645,4 +669,99 @@ function initCounterAnimation() {
   }, { threshold: 0.5 });
 
   amounts.forEach(el => observer.observe(el));
+}
+
+/* --- Platform Devices: scroll-driven 3D flip --- */
+function initPlatformFlip() {
+  if (window.innerWidth < 960) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const section = document.getElementById('platform');
+  if (!section) return;
+
+  const laptop = section.querySelector('.device-laptop--platform');
+  const phoneCol = section.querySelector('.platform__phone-col');
+  if (!laptop || !phoneCol) return;
+
+  const targets = [
+    { el: laptop,   startDeg: -20, endDeg: 15  },
+    { el: phoneCol, startDeg:  20, endDeg: -15 },
+  ];
+
+  const devicesContainer = section.querySelector('.platform__devices');
+  if (!devicesContainer) return;
+
+  let activated = false;
+
+  function activateFlip() {
+    if (activated) return;
+    activated = true;
+    targets.forEach(t => t.el.classList.add('flip-target'));
+    startScrollDrive();
+  }
+
+  if (devicesContainer.classList.contains('is-visible')) {
+    setTimeout(activateFlip, 100);
+  } else {
+    const mo = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.target.classList.contains('is-visible')) {
+          mo.disconnect();
+          devicesContainer.addEventListener('transitionend', function onEnd(e) {
+            if (e.propertyName === 'opacity' || e.propertyName === 'transform') {
+              devicesContainer.removeEventListener('transitionend', onEnd);
+              activateFlip();
+            }
+          });
+          setTimeout(activateFlip, 900);
+          break;
+        }
+      }
+    });
+    mo.observe(devicesContainer, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  function startScrollDrive() {
+    let ticking = false;
+
+    function getProgress() {
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const scrollStart = vh * 0.8;
+      const scrollEnd   = vh * 0.2;
+      const progress = (scrollStart - rect.top) / (scrollStart - scrollEnd);
+      return Math.max(0, Math.min(1, progress));
+    }
+
+    function update() {
+      const progress = getProgress();
+      targets.forEach(({ el, startDeg, endDeg }) => {
+        const deg = startDeg + (endDeg - startDeg) * progress;
+        el.style.setProperty('--scroll-ry', deg + 'deg');
+        if (!el.classList.contains('is-tilting') && !el.querySelector('.is-tilting')) {
+          el.style.transform = `rotateY(${deg}deg)`;
+        }
+      });
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 960) {
+        targets.forEach(({ el }) => {
+          el.style.transform = '';
+          el.style.removeProperty('--scroll-ry');
+        });
+      }
+    }, { passive: true });
+  }
 }

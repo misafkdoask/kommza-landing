@@ -84,7 +84,7 @@ A: Yes. The Start plan is free — up to 10 participants and meetings up to 1 ho
 ## Company
 
 - Legal entity: ООО ЛЕТС (LLC LETS)
-- Website: https://kommza.io
+- Website: https://misafkdoask.github.io/kommza-landing
 - Dashboard: https://hub.kommza.io
 - Start a meeting: https://meeting.kommza.io/unregistered-meeting
 - Telegram: https://t.me/kommza
@@ -93,4 +93,4 @@ A: Yes. The Start plan is free — up to 10 participants and meetings up to 1 ho
 
 ## See Also
 
-- Short version: https://kommza.io/llms.txt
+- Short version: https://misafkdoask.github.io/kommza-landing/llms.txt
